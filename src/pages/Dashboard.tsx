@@ -6,7 +6,7 @@ export default function Dashboard() {
   const [user, setUser] = useState<any>(null);
   const navigate = useNavigate();
 
-  // 🧠 Fetch user on load
+  //  Fetch user on load
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
       if (!data.user) navigate("/");
@@ -14,14 +14,14 @@ export default function Dashboard() {
     });
   }, []);
 
-  // 🧭 Redirect if user visits /dashboard directly
+  //  Redirect if user visits /dashboard directly
   useEffect(() => {
     if (window.location.pathname === "/dashboard") {
       navigate("/dashboard/prompts");
     }
   }, [navigate]);
 
-  // 🚪 Logout handler
+  //  Logout handler
   const handleLogout = async () => {
     await supabase.auth.signOut();
     window.location.href = "/";
@@ -29,7 +29,7 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 text-gray-800">
-      {/* 🔹 Header */}
+      {/*  Header */}
       <header className="flex flex-col sm:flex-row justify-between items-center px-6 sm:px-10 py-4 bg-white shadow-sm gap-3">
         <h1 className="text-2xl font-bold text-indigo-600 tracking-tight">
           PromptForge Studio
@@ -53,7 +53,7 @@ export default function Dashboard() {
         </div>
       </header>
 
-      {/* 🔹 Navigation Tabs */}
+      {/*  Navigation Tabs */}
       <nav className="bg-indigo-50 border-t border-b border-indigo-100 py-3 shadow-inner">
         <div className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-medium px-4">
           <Link
@@ -83,7 +83,7 @@ export default function Dashboard() {
         </div>
       </nav>
 
-      {/* 🔹 Page Content */}
+      {/*  Page Content */}
       <main className="flex-1 p-4 sm:p-6 lg:p-10 max-w-6xl mx-auto w-full">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 min-h-[75vh]">
           <Outlet /> {/* Nested page renders here */}

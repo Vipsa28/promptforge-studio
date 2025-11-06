@@ -43,7 +43,7 @@ export default function MultiModelRunner() {
       setOutput1(text1);
       setOutput2(text2);
 
-      // 🧠 Generate visual diff
+      // Generate visual diff
       const diff = createTwoFilesPatch(model1, model2, text1, text2);
       const html = Diff2Html.getPrettyHtml(diff, {
         inputFormat: "diff",
@@ -67,7 +67,7 @@ export default function MultiModelRunner() {
         🧠 Compare Model Outputs (OpenAI)
       </h2>
 
-      {/* 🧭 Input Area */}
+      {/* Input Area */}
       <div className="space-y-4">
         <textarea
           value={prompt}
@@ -106,7 +106,7 @@ export default function MultiModelRunner() {
         </div>
       </div>
 
-      {/* 🧩 Model Outputs */}
+      {/* Model Outputs */}
       {(output1 || output2) && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           {/* Output 1 */}
@@ -145,7 +145,7 @@ export default function MultiModelRunner() {
         </div>
       )}
 
-      {/* 🧩 Diff Viewer */}
+      {/* Diff Viewer */}
       {diffHtml && (
         <div
           className="diff-output mt-10 overflow-auto border rounded-lg"

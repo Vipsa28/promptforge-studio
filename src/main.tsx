@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Toaster } from "react-hot-toast"; // ✅ Import toaster
+import { Toaster } from "react-hot-toast"; 
 import "./index.css";
 
 import Dashboard from "./pages/Dashboard";
@@ -32,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
 
-    {/* ✅ Global Toast Notifications */}
+    {/*  Global Toast Notifications */}
     <Toaster
       position="top-right"
       toastOptions={{

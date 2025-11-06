@@ -18,7 +18,7 @@ export default function PromptList() {
   const [search, setSearch] = useState("");
   const [sortOrder, setSortOrder] = useState("newest");
 
-  // 🧠 Fetch prompts for current user
+  //  Fetch prompts for current user
   useEffect(() => {
     fetchPrompts();
   }, []);
@@ -44,7 +44,7 @@ export default function PromptList() {
     setLoading(false);
   };
 
-  // 🧩 Filter + Sort logic (debounced)
+  // Filter + Sort logic (debounced)
   useEffect(() => {
     const delay = setTimeout(() => {
       let result = [...prompts];
@@ -80,7 +80,7 @@ export default function PromptList() {
     return () => clearTimeout(delay);
   }, [search, sortOrder, prompts]);
 
-  // 🗑️ Delete prompt (with toast)
+  // Delete prompt (with toast)
   const handleDelete = async (id: string) => {
     const { error } = await supabase.from("prompts").delete().eq("id", id);
     if (error) toast.error(error.message);
@@ -90,7 +90,7 @@ export default function PromptList() {
     }
   };
 
-  // ✏️ Update + Save version (with toast)
+  //  Update + Save version (with toast)
   const handleUpdate = async () => {
     if (!editingPrompt) return;
 
@@ -136,7 +136,7 @@ export default function PromptList() {
         📜 My Prompts
       </h2>
 
-      {/* 🔍 Search & Sort Bar */}
+      {/* Search & Sort Bar */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
         <input
           type="text"
@@ -169,7 +169,7 @@ export default function PromptList() {
               className="bg-white p-5 rounded-2xl shadow-sm card-hover fade-in border border-gray-100"
             >
               {editingPrompt?.id === p.id ? (
-                // ✏️ Edit Mode
+                // Edit Mode
                 <div className="space-y-3">
                   <input
                     type="text"
@@ -206,7 +206,7 @@ export default function PromptList() {
                   </div>
                 </div>
               ) : (
-                // 💬 View Mode
+                // View Mode
                 <>
                   <h3 className="text-lg font-semibold text-indigo-600">
                     {p.title}
@@ -234,7 +234,7 @@ export default function PromptList() {
                     </button>
                   </div>
 
-                  {/* 🕒 Version History */}
+                  {/* Version History */}
                   <VersionHistory
                     promptId={p.id}
                     currentTemplate={p.template}

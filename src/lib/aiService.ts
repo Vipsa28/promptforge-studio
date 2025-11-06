@@ -1,4 +1,4 @@
-// ✳️ Run prompt by selected model
+// Run prompt by selected model
 export async function runPrompt(model: string, prompt: string) {
   switch (model) {
     case "openai":
@@ -8,7 +8,7 @@ export async function runPrompt(model: string, prompt: string) {
   }
 }
 
-// ✅ OpenAI integration only
+// OpenAI integration 
 export async function runPromptWithOpenAI(prompt: string) {
   try {
     const res = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -18,7 +18,7 @@ export async function runPromptWithOpenAI(prompt: string) {
         Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini", // or gpt-3.5-turbo if you prefer
+        model: "gpt-4o-mini", 
         messages: [{ role: "user", content: prompt }],
       }),
     });

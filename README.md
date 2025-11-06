@@ -1,25 +1,28 @@
 # ⚙️ PromptForge Studio  
 ### 🧠 _AI Prompt Engineering Workbench with Real-Time LLM Comparison_
 
+🔗 **Live Demo:** [https://promptforge-studio.vercel.app](https://promptforge-studio.vercel.app)
+
 ![App Preview](./screenshots/compare-models.png)
 
 ---
 
 ## 🚀 Overview
 
-**PromptForge Studio** is a full-stack prompt management and testing platform built using **React + Supabase + OpenAI API**.  
-It allows AI engineers and developers to **create, organize, test, and compare prompts** across multiple LLMs — all in one place.
+**PromptForge Studio** is a full-stack **Prompt Management and AI Testing Platform** built with **React, Supabase, and OpenAI API**.  
+It enables AI engineers and developers to **create, organize, version, and compare prompts** across multiple LLMs — all in one clean, interactive dashboard.
 
 ---
 
 ## 🧠 Key Features
 
-✅ **Secure Authentication (Supabase)** — email-based login & logout  
-✅ **Prompt Management** — create, edit, delete, and store templates  
-✅ **Automatic Version Control** — saves every previous prompt version  
-✅ **AI Model Comparison** — test prompts on GPT-4o-mini and GPT-4-turbo  
-✅ **Visual Diff Viewer** — highlights how model responses differ  
-✅ **Clean Responsive UI** — built with Tailwind CSS and React Hooks
+✅ **Secure Authentication (Supabase)** — Email-based login & logout  
+✅ **Prompt Management** — Create, edit, and delete reusable prompt templates  
+✅ **Automatic Version Control** — Each prompt version is saved for comparison  
+✅ **AI Model Comparison** — Run the same prompt on `GPT-4o-mini` and `GPT-4-turbo`  
+✅ **Visual Diff Viewer** — Highlights response differences side-by-side using Diff2Html  
+✅ **Clean & Responsive UI** — Built with Tailwind CSS and React Hooks  
+✅ **Real-Time Feedback** — Instant toast notifications for all actions  
 
 ---
 
@@ -27,42 +30,35 @@ It allows AI engineers and developers to **create, organize, test, and compare p
 
 | Layer | Tools |
 |-------|--------|
-| Frontend | React 19, TypeScript, Tailwind CSS |
-| Backend / DB | Supabase (PostgreSQL + Auth) |
-| AI Integration | OpenAI API |
-| Utilities | Diff2Html, React Hot Toast |
-| Deployment | Vercel / Netlify |
+| **Frontend** | React 19, TypeScript, Tailwind CSS |
+| **Backend / DB** | Supabase (PostgreSQL + Auth) |
+| **AI Integration** | OpenAI API |
+| **Utilities** | Diff2Html, React Hot Toast |
+| **Deployment** | Vercel (Production), Localhost (Development) |
 
 ---
 
 ## ⚙️ Setup & Installation
 
-1️⃣ **Clone the repository**
+### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/promptforge-studio.git
+git clone https://github.com/Vipsa28/promptforge-studio.git
 cd promptforge-studio
 
-2️⃣ Install dependencies
-
+2️⃣ Install Dependencies
 npm install --legacy-peer-deps
 
-3️⃣ Create a .env file
-
+3️⃣ Create a .env File in the Project Root
 VITE_SUPABASE_URL=your_supabase_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 VITE_OPENAI_API_KEY=your_openai_api_key
 
-4️⃣ Run the app
 
+⚠️ Make sure your .env file is listed in .gitignore before committing to GitHub.
+
+4️⃣ Start the App (Development)
 npm run dev
 
+
 Open http://localhost:5173
- to view your app.
-
- 🌐 Live Demo
-
-🔗 https://promptforge-studio.vercel.app
-
-🧱 License
-
-MIT License © 2025 — PromptForge Studio
+ to view the app locally.
