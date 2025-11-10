@@ -10,12 +10,14 @@ import PromptForm from "./components/PromptForm";
 import PromptList from "./components/PromptList";
 import TestPrompt from "./components/TestPrompt";
 import MultiModelRunner from "./components/MultiModelRunner";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="create" element={<PromptForm />} />
           <Route path="prompts" element={<PromptList />} />
